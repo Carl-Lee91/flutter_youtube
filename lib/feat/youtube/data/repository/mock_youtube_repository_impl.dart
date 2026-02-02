@@ -4,23 +4,18 @@ import 'package:flutter_youtube/feat/youtube/domain/repository/youtube_repositor
 class MockYoutubeRepositoryImpl implements YoutubeRepository {
   @override
   Future<List<VideoEntity>> getVideos() async {
-    // Simulate network delay
     await Future.delayed(const Duration(milliseconds: 800));
 
     return [
-      // 1. Live Video
       const VideoEntity(
-        id: 'jfKfPfyJRdk', // Lofi Girl Radio
+        id: 'jfKfPfyJRdk',
         title: 'lofi hip hop radio - beats to relax/study to',
         thumbnailUrl:
             'https://img.youtube.com/vi/jfKfPfyJRdk/maxresdefault.jpg',
         type: VideoType.live,
       ),
-
-      // 2. Normal Videos (5 items)
-      // TODO: Replace with real Video IDs
       const VideoEntity(
-        id: '5qap5aO4i9A', // lofi hip hop radio - beats to sleep/chill to
+        id: '5qap5aO4i9A',
         title: 'lofi hip hop radio - beats to sleep/chill to',
         thumbnailUrl:
             'https://img.youtube.com/vi/5qap5aO4i9A/maxresdefault.jpg',
@@ -54,14 +49,10 @@ class MockYoutubeRepositoryImpl implements YoutubeRepository {
             'https://img.youtube.com/vi/n61ULEU7CO0/maxresdefault.jpg',
         type: VideoType.normal,
       ),
-
-      // 3. Shorts (10 items)
-      // TODO: Replace with real Shorts IDs
       const VideoEntity(
         id: 'shorts_1',
         title: 'Funny Cat #1',
-        thumbnailUrl:
-            'https://i.ytimg.com/vi/S7Vt4nMceTk/oar2.jpg', // Placeholder
+        thumbnailUrl: 'https://i.ytimg.com/vi/S7Vt4nMceTk/oar2.jpg',
         type: VideoType.shorts,
       ),
       const VideoEntity(

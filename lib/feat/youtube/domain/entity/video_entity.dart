@@ -1,7 +1,7 @@
 enum VideoType { live, normal, shorts }
 
 class VideoEntity {
-  final String id; // YouTube Video ID
+  final String id;
   final String title;
   final String thumbnailUrl;
   final VideoType type;

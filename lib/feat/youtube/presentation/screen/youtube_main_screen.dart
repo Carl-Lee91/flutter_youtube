@@ -38,26 +38,18 @@ class YoutubeMainScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 1. Live Header
                   if (state.liveVideos.isNotEmpty)
                     LiveHeaderWidget(video: state.liveVideos.first),
-
                   const SizedBox(height: 24),
-
-                  // 2. Normal Video List (5 items)
                   if (state.normalVideos.isNotEmpty)
                     VideoListWidget(
                       videos: state.normalVideos.take(5).toList(),
                     ),
-
                   const SizedBox(height: 24),
-
-                  // 3. Shorts List (10 items)
                   if (state.shortsVideos.isNotEmpty)
                     ShortsListWidget(
                       videos: state.shortsVideos.take(10).toList(),
                     ),
-
                   const SizedBox(height: 48),
                 ],
               ),

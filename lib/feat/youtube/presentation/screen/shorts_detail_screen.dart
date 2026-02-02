@@ -18,16 +18,13 @@ class _ShortsDetailScreenState extends State<ShortsDetailScreen> {
   void initState() {
     super.initState();
 
-    // Validating video ID for Shorts (sometimes ID format differs, but usually same 11 chars)
-    // Note: youtube_player_flutter might struggle with vertical aspect ratio natively in iframe mode,
-    // but we can force UI size.
     _controller = YoutubePlayerController(
       initialVideoId: widget.video.id,
       flags: const YoutubePlayerFlags(
         autoPlay: true,
         mute: false,
         loop: true,
-        hideControls: true, // Shorts usually hide default controls
+        hideControls: true,
       ),
     );
   }
@@ -40,7 +37,6 @@ class _ShortsDetailScreenState extends State<ShortsDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Shorts are usually full screen 9:16
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
